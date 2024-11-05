@@ -7,6 +7,7 @@ export default function Contact() {
     email: '',
     message: '',
   });
+  const [submissionStatus, setSubmissionStatus] = useState(''); // State for notification
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -28,8 +29,10 @@ export default function Contact() {
       console.log('Form submitted successfully:', result);
       // Optionally, you can reset the form data here
       setFormData({ name: '', email: '', message: '' });
+      setSubmissionStatus('Form submitted successfully!'); // Set success message
     } else {
       console.error('Form submission error:', result);
+      setSubmissionStatus('Form submission failed. Please try again.'); // Set error message
     }
   };
 
@@ -148,6 +151,9 @@ export default function Contact() {
               Send Message
               <Send className="w-4 h-4" />
             </button>
+            {submissionStatus && (
+              <p className="mt-4 text-center text-white">{submissionStatus}</p>
+            )}
           </form>
         </div>
       </div>
