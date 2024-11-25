@@ -19,7 +19,7 @@ export default function Contact() {
         Accept: 'application/json',
       },
       body: JSON.stringify({
-        access_key: 'c91acfa9-5533-43b4-b458-50218b6e2d1f', // Replace with your Web3Forms Access Key
+        access_key: 'f3172e8d-ac82-4dc1-a3fe-8a8c90e0d437', // Replace with your Web3Forms Access Key
         ...formData,
       }),
     });
